@@ -1,0 +1,29 @@
+{
+  "name": "ios-tabs",
+  "version": "0.0.1",
+  "description": "iOS design tabs",
+  "authors": [
+    "Abdón Rodríguez Davila <thepeer@kingofapp.es>"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "ios",
+    "tabs",
+    "control"
+  ],
+  "main": "ios-tabs.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KingofApp/ios-tabs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  }
+}
