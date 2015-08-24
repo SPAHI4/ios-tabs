@@ -4,10 +4,17 @@ Copyright (c) 2015 Team King of App. All rights reserved.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../iron-menu-behavior/iron-menubar-behavior.html">
 
 <dom-module id="ios-tabs">
   <template>
+
+    <style>
+      #tabsContainer {
+        @apply(--layout-horizontal);
+      }
+    </style>
 
     <div id="tabsContainer">
       <content select="*"></content>
