@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="ios-tab">
+  <template>
+
+    <style>
+      :host {
+        @apply(--layout-center);
+        @apply(--layout-center-justified);
+        @apply(--layout-flex);
+        @apply(--layout-inline);
+
+        appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          -webkit-appearance: none;
+        background: none;
+        border: 1px solid var(--ios-tab-color, --default-primary-color);
+        box-sizing: border-box;
+        color: var(--ios-tab-color, --default-primary-color);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        height: 29px;
+        margin: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      :host:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      :host:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      :host(:focus) {
+        outline: none;
+      }
+
+      :host:active {
+        background: var(--ios-tab-active-color, --light-primary-color);
+      }
+
+      :host([active]),
+      :host(.iron-selected) {
+        background: var(--ios-tab-color, --default-primary-color);
+        color: var(--ios-tab-text-color, white);
+      }
+
+      i.icon:first-child {
+        margin-right: 10px;
+      }
+
+      i.icon:last-child {
+        margin-left: 10px;
+      }
+
+      i.icon:first-child:last-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    </style>
+
+    <content></content>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-tab',
+
+      behaviors: [
+        Polymer.IronControlState,
+        Polymer.IronButtonState
+      ],
+
+      hostAttributes: {
+        role: 'tab'
+      }
+    });
+  </script>
+</dom-module>
