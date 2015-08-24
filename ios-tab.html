@@ -4,15 +4,28 @@ Copyright (c) 2015 Team King of App. All rights reserved.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
 
 <dom-module id="ios-tab">
   <template>
 
-  </template>
-</dom-module>
+    <content></content>
 
-<script>
-  Polymer({
-    is: 'ios-tab'
-  });
-</script>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-tab',
+
+      behaviors: [
+        Polymer.IronControlState,
+        Polymer.IronButtonState
+      ],
+
+      hostAttributes: {
+        role: 'tab'
+      }
+    });
+  </script>
+</dom-module>
