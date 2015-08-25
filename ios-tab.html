@@ -23,7 +23,9 @@ Copyright (c) 2015 Team King of App. All rights reserved.
           -ms-appearance: none;
           -webkit-appearance: none;
         background: none;
-        border: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-top: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-left: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-bottom: 1px solid var(--ios-tab-color, --default-primary-color);
         box-sizing: border-box;
         color: var(--ios-tab-color, --default-primary-color);
         cursor: pointer;
@@ -44,6 +46,7 @@ Copyright (c) 2015 Team King of App. All rights reserved.
       }
 
       :host:last-child {
+        border-right: 1px solid var(--ios-tab-color, --default-primary-color);
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
       }
