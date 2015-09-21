@@ -15,9 +15,34 @@ This code may only be used under the MIT license.
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
+  <link rel="import" href="../../paper-styles/demo-pages.html">
   <link rel="import" href="../ios-tabs.html">
 </head>
 <body>
+  <h3>A. Basic tabs</h3>
+
+  <ios-tabs selected="0" noink no-bar>
+    <ios-tab>ITEM ONE</ios-tab>
+    <ios-tab>ITEM TWO</ios-tab>
+    <ios-tab>ITEM THREE</ios-tab>
+  </ios-tabs>
+
+  <h3>B. Link Tabs</h3>
+
+  <ios-tabs selected="0">
+    <ios-tab link>
+      <a href="#item1" class="horizontal center-center layout">ITEM ONE</a>
+    </ios-tab>
+    <ios-tab link>
+      <a href="#item2" class="horizontal center-center layout">ITEM TWO</a>
+    </ios-tab>
+    <ios-tab link>
+      <a href="#item3" class="horizontal center-center layout">ITEM THREE</a>
+    </ios-tab>
+  </ios-tabs>
+
+  <h3>C. Bound Selection</h3>
+
   <template is="dom-bind">
     <h2>Current Tab: <span>[[selected]]</span></h2>
     <ios-tabs selected="{{selected}}">
