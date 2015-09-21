@@ -9,6 +9,30 @@ This code may only be used under the MIT license.
 <link rel="import" href="../iron-behaviors/iron-button-state.html">
 <link rel="import" href="../iron-behaviors/iron-control-state.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
+
+<!--
+`ios-tab` is styled to look like a tab.  It should be used in conjunction with
+`ios-tabs`.
+
+Example:
+
+    <ios-tabs selected="0">
+      <ios-tab>TAB 1</ios-tab>
+      <ios-tab>TAB 2</ios-tab>
+      <ios-tab>TAB 3</ios-tab>
+    </ios-tabs>
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--ios-tab-color` | Color tab | `--default-primary-color`
+`--ios-tab-active-color` | Color when the tab is active | `--light-primary-color`
+`--ios-tab-text-color` | Color text of the tab | `white`
+-->
 
 <dom-module id="ios-tab">
   <template>
@@ -57,6 +81,10 @@ This code may only be used under the MIT license.
         outline: none;
       }
 
+      :host([link]) {
+        padding: 0;
+      }
+
       :host:active {
         background: var(--ios-tab-active-color, --light-primary-color);
       }
@@ -67,21 +95,19 @@ This code may only be used under the MIT license.
         color: var(--ios-tab-text-color, white);
       }
 
-      i.icon:first-child {
-        margin-right: 10px;
+      .tab-content {
+        height: 100%;
       }
 
-      i.icon:last-child {
-        margin-left: 10px;
-      }
-
-      i.icon:first-child:last-child {
-        margin-left: 0;
-        margin-right: 0;
+      .tab-content > ::content > a {
+        height: 100%;
+        @apply(--layout-flex);
       }
     </style>
 
-    <content></content>
+    <div class="tab-content flex-auto center-center horizontal layout">
+      <content></content>
+    </div>
 
   </template>
 
