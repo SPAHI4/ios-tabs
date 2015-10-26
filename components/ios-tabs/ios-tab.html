@@ -1,0 +1,132 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+This code may only be used under the MIT license.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../ios-styles/ios-styles.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
+
+<!--
+`ios-tab` is styled to look like a tab.  It should be used in conjunction with
+`ios-tabs`.
+
+Example:
+
+    <ios-tabs selected="0">
+      <ios-tab>TAB 1</ios-tab>
+      <ios-tab>TAB 2</ios-tab>
+      <ios-tab>TAB 3</ios-tab>
+    </ios-tabs>
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--ios-tab-color` | Color tab | `--default-primary-color`
+`--ios-tab-active-color` | Color when the tab is active | `--light-primary-color`
+`--ios-tab-text-color` | Color text of the tab | `white`
+-->
+
+<dom-module id="ios-tab">
+  <template>
+
+    <style>
+      :host {
+        @apply(--layout-center);
+        @apply(--layout-center-justified);
+        @apply(--layout-flex);
+        @apply(--layout-inline);
+
+        appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          -webkit-appearance: none;
+        background: none;
+        border-top: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-left: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-bottom: 1px solid var(--ios-tab-color, --default-primary-color);
+        box-sizing: border-box;
+        color: var(--ios-tab-color, --default-primary-color);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        height: 29px;
+        margin: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      :host:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      :host:last-child {
+        border-right: 1px solid var(--ios-tab-color, --default-primary-color);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      :host(:focus) {
+        outline: none;
+      }
+
+      :host([link]) {
+        padding: 0;
+      }
+
+      :host:active {
+        background: var(--ios-tab-active-color, --light-primary-color);
+      }
+
+      :host([active]),
+      :host(.iron-selected) {
+        background: var(--ios-tab-color, --default-primary-color);
+        color: var(--ios-tab-text-color, white);
+      }
+
+      .tab-content {
+        height: 100%;
+      }
+
+      :host(:focus) .tab-content {
+        font-weight: 700;
+      }
+
+      .tab-content > ::content > a {
+        height: 100%;
+        @apply(--layout-flex);
+      }
+    </style>
+
+    <div class="tab-content flex-auto center-center horizontal layout">
+      <content></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-tab',
+
+      behaviors: [
+        Polymer.IronControlState,
+        Polymer.IronButtonState
+      ],
+
+      hostAttributes: {
+        role: 'tab'
+      }
+    });
+  </script>
+</dom-module>

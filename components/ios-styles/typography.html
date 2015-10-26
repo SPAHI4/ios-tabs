@@ -1,0 +1,69 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+This code may only be used under the MIT license.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<!-- TODO: Change Roboto to San Francisco -->
+<link rel="import" href="../font-roboto/roboto.html">
+
+<style is="custom-style">
+  :root {
+    /* Shared Styles */
+
+    /*
+    Unfortunately, we can't use nested rules
+    See https://github.com/Polymer/polymer/issues/1399
+    */
+    --ios-font-common-base: {
+      font-family: 'Roboto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    };
+
+    --ios-font-common-code: {
+      font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+      -webkit-font-smoothing: antialiased;
+    };
+
+    --ios-font-common-expensive-kerning: {
+      text-rendering: optimizeLegibility;
+    };
+
+    --ios-font-common-nowrap: {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    };
+
+    /* iOS Font Styles */
+
+    --ios-font-title: {
+      /* @apply(--ios-font-common-base) */
+      font-family: 'Roboto', 'Noto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      /* @apply(--ios-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
+      /* @apply(--ios-font-common-nowrap); */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 28px;
+    };
+
+    --ios-font-subhead: {
+      /* @apply(--ios-font-common-base) */
+      font-family: 'Roboto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      /* @apply(--ios-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    };
+  }
+</style>

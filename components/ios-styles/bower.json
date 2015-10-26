@@ -1,0 +1,29 @@
+{
+  "name": "ios-styles",
+  "version": "0.2.2",
+  "description": "Common (global) styles for iOS elements",
+  "authors": [
+    "Abdón Rodríguez Davila <thepeer@kingofapp.es>"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "ios",
+    "style"
+  ],
+  "main": "ios-styles.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KingofApp/ios-styles.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "font-roboto": "PolymerElements/font-roboto#^1.0.0"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  }
+}

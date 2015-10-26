@@ -1,0 +1,115 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+This code may only be used under the MIT license.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-menu-behavior/iron-menubar-behavior.html">
+<link rel="import" href="ios-tab.html">
+
+<!--
+`ios-tabs` makes it easy to explore and switch between different views or functional aspects of
+an app, or to browse categorized data sets.
+
+Use `selected` property to get or set the selected tab.
+
+Example:
+
+    <ios-tabs selected="0">
+      <ios-tab>TAB 1</ios-tab>
+      <ios-tab>TAB 2</ios-tab>
+      <ios-tab>TAB 3</ios-tab>
+    </ios-tabs>
+
+See <a href="#ios-tab">ios-tab</a> for more information about
+`ios-tab`.
+
+A common usage for `ios-tabs` is to use it along with `iron-pages` to switch
+between different views.
+
+    <ios-tabs selected="{{selected}}">
+      <ios-tab>Tab 1</ios-tab>
+      <ios-tab>Tab 2</ios-tab>
+      <ios-tab>Tab 3</ios-tab>
+    </ios-tabs>
+
+    <iron-pages selected="{{selected}}">
+      <div>Page 1</div>
+      <div>Page 2</div>
+      <div>Page 3</div>
+    </iron-pages>
+
+To use links in tabs, add `link` attribute to `ios-tab` and put an `<a>`
+element in `ios-tab`.
+
+Example:
+
+    <ios-tabs selected="0">
+      <ios-tab link>
+        <a href="#link1" class="horizontal center-center layout">TAB ONE</a>
+      </ios-tab>
+      <ios-tab link>
+        <a href="#link2" class="horizontal center-center layout">TAB TWO</a>
+      </ios-tab>
+      <ios-tab link>
+        <a href="#link3" class="horizontal center-center layout">TAB THREE</a>
+      </ios-tab>
+    </ios-tabs>
+
+@demo demo/index.html
+-->
+
+<dom-module id="ios-tabs">
+  <template>
+
+    <style>
+      #tabsContainer {
+        @apply(--layout-horizontal);
+      }
+    </style>
+
+    <div id="tabsContainer">
+      <content select="*"></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-tabs',
+
+      behaviors: [
+        Polymer.IronMenubarBehavior
+      ],
+
+      properties: {
+        /**
+         * Gets or sets the selected element. The default is to use the index of the item.
+         */
+        selected: {
+          type: String,
+          notify: true
+        },
+
+        selectable: {
+          type: String,
+          value: 'ios-tab'
+        }
+      },
+
+      hostAttributes: {
+        role: 'tablist'
+      },
+
+      listeners: {
+        'iron-select': '_onIronSelect'
+      },
+
+      _onIronSelect: function(event) {
+        this._previousTab = event.detail.item;
+      }
+    });
+  </script>
+</dom-module>
