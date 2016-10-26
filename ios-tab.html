@@ -66,12 +66,12 @@ Custom property | Description | Default
         white-space: nowrap;
       }
 
-      :host:first-child {
+      :host(:first-child) {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
       }
 
-      :host:last-child {
+      :host(:last-child) {
         border-right: 1px solid var(--ios-tab-color, --default-primary-color);
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
